@@ -49,39 +49,29 @@ Choose ONE of the following problems to solve:
 ### Option D: Shopping Cart State Management
 
 ```javascript
-// Problem: Implement a shopping cart state management system that handles:
-// - Adding items to cart
-// - Removing items from cart
-// - Updating item quantities
-// - Calculating total price
-// - Applying discounts
-// - Persisting cart state between page refreshes
-
+// Problem: Refactor the provided ShoppingCart component to use React Context for state management.
 // Requirements:
-// 1. Use React's useState or useReducer
-// 2. Handle edge cases (negative quantities, invalid prices)
-// 3. Implement a discount system (e.g., 10% off for 3+ items)
-// 4. Persist cart data in localStorage
-// 5. Handle concurrent updates safely
+// 1. Create a CartContext to manage the shopping cart state
+// 2. Move all state management logic from the component to the context
+// 3. Implement the following features in the context:
+//    - Add items to cart
+//    - Remove items from cart
+//    - Update item quantities
+//    - Apply discounts
+//    - Calculate totals
+//    - Persist cart data in localStorage
+// 4. Create a custom hook (useCart) to access the cart context
+// 5. Update the ShoppingCart component to use the context
+// 6. Handle edge cases and error states
+// 7. Ensure proper TypeScript types (if using TypeScript)
 
-// Example usage:
-const cart = {
-  items: [
-    { id: 1, name: "Product 1", price: 10, quantity: 2 },
-    { id: 2, name: "Product 2", price: 15, quantity: 1 },
-  ],
-  discount: 0.1, // 10% discount
-  total: 31.5, // (10 * 2 + 15) * 0.9
-};
-
-// Implement the following functions:
+// The context should provide:
+// - cart state (items, discount, total)
 // - addToCart(item)
 // - removeFromCart(itemId)
 // - updateQuantity(itemId, quantity)
 // - applyDiscount(discountPercentage)
-// - getTotal()
-// - saveCart()
-// - loadCart()
+// - clearCart()
 ```
 
 ## Question 2: FAQ Accordion Component
