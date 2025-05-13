@@ -46,6 +46,44 @@ Choose ONE of the following problems to solve:
 // Output: 10
 ```
 
+### Option D: Shopping Cart State Management
+
+```javascript
+// Problem: Implement a shopping cart state management system that handles:
+// - Adding items to cart
+// - Removing items from cart
+// - Updating item quantities
+// - Calculating total price
+// - Applying discounts
+// - Persisting cart state between page refreshes
+
+// Requirements:
+// 1. Use React's useState or useReducer
+// 2. Handle edge cases (negative quantities, invalid prices)
+// 3. Implement a discount system (e.g., 10% off for 3+ items)
+// 4. Persist cart data in localStorage
+// 5. Handle concurrent updates safely
+
+// Example usage:
+const cart = {
+  items: [
+    { id: 1, name: "Product 1", price: 10, quantity: 2 },
+    { id: 2, name: "Product 2", price: 15, quantity: 1 },
+  ],
+  discount: 0.1, // 10% discount
+  total: 31.5, // (10 * 2 + 15) * 0.9
+};
+
+// Implement the following functions:
+// - addToCart(item)
+// - removeFromCart(itemId)
+// - updateQuantity(itemId, quantity)
+// - applyDiscount(discountPercentage)
+// - getTotal()
+// - saveCart()
+// - loadCart()
+```
+
 ## Question 2: FAQ Accordion Component
 
 ### Overview
