@@ -65,13 +65,26 @@ Choose ONE of the following problems to solve:
 // 6. Handle edge cases and error states
 // 7. Ensure proper TypeScript types (if using TypeScript)
 
+// Discount System Requirements:
+// - Implement multiple discount types:
+//   * Percentage-based discount (e.g., 10% off)
+//   * Quantity-based discount (e.g., buy 3 get 1 free)
+//   * Category-based discount (e.g., 15% off all electronics)
+// - Allow stacking of different discount types
+// - Calculate final price after all discounts
+// - Show discount breakdown in the UI
+// - Persist discount rules in the context
+// - Handle discount conflicts and priorities
+
 // The context should provide:
-// - cart state (items, discount, total)
+// - cart state (items, discounts, total)
 // - addToCart(item)
 // - removeFromCart(itemId)
 // - updateQuantity(itemId, quantity)
-// - applyDiscount(discountPercentage)
+// - applyDiscount(discountType, value)
+// - removeDiscount(discountType)
 // - clearCart()
+// - getDiscountBreakdown()
 ```
 
 ## Question 2: FAQ Accordion Component
