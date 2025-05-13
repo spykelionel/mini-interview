@@ -1,21 +1,4 @@
-import { useEffect, useState } from "react";
-
-const ShoppingCart = () => {
-  const [cart, setCart] = useState(() => {
-    const savedCart = localStorage.getItem("cart");
-    return savedCart
-      ? JSON.parse(savedCart)
-      : {
-          items: [],
-          discount: 0,
-          total: 0,
-        };
-  });
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
+const ShoppingCart = ({ cart, setCart }) => {
   const addToCart = (item) => {
     setCart((prevCart) => {
       const existingItem = prevCart.items.find((i) => i.id === item.id);
@@ -70,7 +53,6 @@ const ShoppingCart = () => {
     total: calculateTotal(items, discount),
   });
 
-  // Sample products for testing
   const sampleProducts = [
     { id: 1, name: "Product 1", price: 10 },
     { id: 2, name: "Product 2", price: 15 },
@@ -151,7 +133,7 @@ const ShoppingCart = () => {
             {/* Discount Section */}
             <div className="mt-4">
               <label className="block text-sm font-medium text-gray-700">
-                Discount ({cart.discount * 100}%)
+                Discount ({Math.round(cart.discount * 100)}%)
               </label>
               <input
                 type="range"
